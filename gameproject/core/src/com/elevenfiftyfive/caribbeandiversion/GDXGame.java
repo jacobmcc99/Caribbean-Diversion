@@ -10,7 +10,7 @@ public class GDXGame extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
 	float x=0,y=0;
-	
+	float d = 3;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
