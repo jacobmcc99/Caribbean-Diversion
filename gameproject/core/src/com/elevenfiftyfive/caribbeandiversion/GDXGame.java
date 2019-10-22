@@ -11,7 +11,6 @@ public class GDXGame extends ApplicationAdapter {
 	Texture img;
 	float x=0,y=0;
 	float d = 3;
-	float test = 45;
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
