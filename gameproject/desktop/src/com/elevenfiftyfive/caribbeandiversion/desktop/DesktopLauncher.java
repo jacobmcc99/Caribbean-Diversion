@@ -2,6 +2,7 @@ package com.elevenfiftyfive.caribbeandiversion.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+
 import com.elevenfiftyfive.caribbeandiversion.GDXGame;
 
 public class DesktopLauncher {
