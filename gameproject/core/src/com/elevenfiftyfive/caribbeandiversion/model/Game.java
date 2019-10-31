@@ -21,7 +21,7 @@ public class Game
         
 
     }
-    public Ship createShip() 
+    public PlayerShip createShip() 
     {
        HashMap<String,Crew>crew = new HashMap<>();
        crew.put("firstmate",new Crew(10));
@@ -36,7 +36,7 @@ public class Game
        cannons.put("centerright", new Cannon(10));
        cannons.put("right", new Cannon(10));
 
-        return new PlayerShip(crew,cannons);
+        return new PlayerShip(cannons,crew);
     }
     
 

@@ -10,17 +10,25 @@ public abstract class Task {
     private int length;
     private LocalDateTime end;
     private String targetKey;
-    private String UsingKey;
+    // private String UsingKey;
 
-    public Task(int length, String targetKey, String UsingKey) {
+    public Task(int length, String targetKey) {
 
         this.length = length;
 
         // set time
         this.end = LocalDateTime.now().plusSeconds(length);
 
+        this.setTargetKey(targetKey);
+        // this.UsingKey = UsingKey;
+    }
+
+    public String getTargetKey() {
+        return targetKey;
+    }
+
+    public void setTargetKey(String targetKey) {
         this.targetKey = targetKey;
-        this.UsingKey = UsingKey;
     }
 
     public long getSecsRemaining() {
@@ -37,11 +45,11 @@ public abstract class Task {
         return getSecsRemaining() == 0;
     }
 
-    public void changeUsing(String UsingKey) {
-        this.UsingKey = UsingKey;
+  /*   public void changeUsing(String UsingKey) {
+    //    this.UsingKey = UsingKey;
         // retart task
         this.end = LocalDateTime.now().plusSeconds(length);
     }
-
+*/
     abstract public Utility complete(Utility usingUtil, Utility targetUtil);
 }

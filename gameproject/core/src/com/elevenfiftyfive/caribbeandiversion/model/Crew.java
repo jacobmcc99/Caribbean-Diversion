@@ -11,7 +11,8 @@ public class Crew extends Utility
         super(quality);
     }
 
-    
-    
-    
+    public void startRepair(String targetKey)
+    {
+        this.setTask(new Repair(20 - (this.getQuality()/10),targetKey));
+    }
 }
