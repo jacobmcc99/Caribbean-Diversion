@@ -1,9 +1,6 @@
 package com.elevenfiftyfive.caribbeandiversion.model;
 
 import java.util.HashMap;
-import java.util.List;
-
-import javax.rmi.CORBA.Util;
 
 public abstract class Ship {
 
@@ -24,33 +21,27 @@ public abstract class Ship {
             if (cannon.getShooterKey() ==crew.getKey()) {
                 cannon.setShooterKey("");
             }
-        } // now start repair
+        }
         crew.startRepair(target.getKey());
     }
 
-    public void shootCan(Utility target, Cannon cannon, Crew crew) {
+    /*public void shootCannon(Utility target, Cannon cannon, Crew crew) {
+       // first check if this cannon has been setup
+        for (Cannon can : this.cannons.values()) {
+            // iterate over all tasks and check if crew member has finished setting up this task
+            
+        }
 
         cannon.shoot(target.getKey(),crew.getKey());
      
    }
-
+*/
     public void CompleteTasks()
     {
-        // carray out all damages on cannons
-        for (String cannonKey : cannons.keySet()) {
-            // complete shots and repairs for this cannon
-            for (Cannon otherCannon : cannons.values()) {
-                // check if theres any shots heading for it
-                if (otherCannon.getTask().getTargetKey() == cannonKey) {
-
-                    // if so, replace the cannon with the damaged Cannon
-                    Cannon damagedCannon = (Cannon)otherCannon.getTask().complete(otherCannon, cannons.get(cannonKey));
-                    cannons.put(cannonKey, damagedCannon);
-
-                    
-                }
-            }
-        }
+       // complete and apply tasks
+       for (String cannonKey : cannons.keySet()) {
+           
+       }
     }
 
 }

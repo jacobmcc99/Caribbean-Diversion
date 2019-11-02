@@ -1,16 +1,27 @@
 package com.elevenfiftyfive.caribbeandiversion.model;
 
-import java.util.Date;
 
 public abstract class Utility {
+    private String key;
+    
     private int health;
     private int quality;
-    protected Task task;
-    private String key;
+
+    private boolean ready; // ready for the task to completed
 
     public Utility(int quality) {
         this.health = 100;
         this.quality = quality;
+        this.ready = false;
+        
+    }
+   
+    public boolean isReady() {
+        return ready;
+    }
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
     }
 
     public String getKey() {
@@ -28,24 +39,24 @@ public abstract class Utility {
     public int getQuality() {
         return quality;
     }
-
+/*
     public boolean isBusy() {
-        return this.task.isDone() || task == null;
+        return this.currentTask.isDone() || currentTask== null;
     }
-
+*/
     public void setHealth(int health) {
         this.health = health;
     }
-
-    public Task getTask() {
-        return this.task;
+/*
+    public Task getCurrentTask() {
+        return this.currentTask;
     }
+    
+    public void setTask(Task currentTask) {
+        //if (!this.isBusy()) {
+            this.currentTask = currentTask; // override the task with another task
+      //  }
 
-    public void setTask(Task task) {
-        if (!this.isBusy()) {
-            this.task = task;
-        }
-
-    }
+    }*/
 
 }

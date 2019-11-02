@@ -1,10 +1,7 @@
 package com.elevenfiftyfive.caribbeandiversion.model;
 
 import java.time.LocalDateTime;
-import java.sql.Date;
 import java.time.Duration;
-
-import java.util.Calendar;
 
 public abstract class Task {
     private int length;
@@ -14,13 +11,21 @@ public abstract class Task {
 
     public Task(int length, String targetKey) {
 
-        this.length = length;
+        this.setLength(length);
 
         // set time
         this.end = LocalDateTime.now().plusSeconds(length);
 
         this.setTargetKey(targetKey);
         // this.UsingKey = UsingKey;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public String getTargetKey() {
@@ -44,12 +49,5 @@ public abstract class Task {
     public boolean isDone() {
         return getSecsRemaining() == 0;
     }
-
-  /*   public void changeUsing(String UsingKey) {
-    //    this.UsingKey = UsingKey;
-        // retart task
-        this.end = LocalDateTime.now().plusSeconds(length);
-    }
-*/
-    abstract public Utility complete(Utility usingUtil, Utility targetUtil);
+    abstract public Utility apply(Utility usingUtil, Utility targetUtil);
 }

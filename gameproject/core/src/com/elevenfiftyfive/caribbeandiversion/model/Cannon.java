@@ -6,11 +6,26 @@ import java.util.List;
 import java.util.Random;
 
 public class Cannon extends Utility {
+
     private String shooterKey;
+    private boolean setUp;
+    private TaskCollection<Shot> shots;
+
     public Cannon(int quality) {
         super(quality);
         this.shooterKey = "";
+        this.setUp=false;
+        shots = new TaskCollection<>();
     }
+
+    public boolean isSetUp() {
+        return setUp;
+    }
+
+    public void setSetUp(boolean setUp) {
+        this.setUp = setUp;
+    }
+
     public String getShooterKey() {
         return shooterKey;
     }
@@ -20,9 +35,10 @@ public class Cannon extends Utility {
     }
 
     public void shoot(String targetKey, String shooterKey) {
-        if (shooterKey!="") {
-            this.setTask(new Shot(3, targetKey));
-        }
+        
+        
     }
+
+
 
 }
