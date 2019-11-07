@@ -11,8 +11,8 @@ public class Cannon extends Utility {
     private boolean setUp;
     private TaskCollection<Shot> shots;
 
-    public Cannon(int quality) {
-        super(quality);
+    public Cannon(int quality,String Key) {
+        super(quality,Key);
         this.shooterKey = "";
         this.setUp=false;
         shots = new TaskCollection<>();

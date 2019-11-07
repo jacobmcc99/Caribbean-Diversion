@@ -1,5 +1,6 @@
 package com.elevenfiftyfive.caribbeandiversion.model;
 
+import java.security.Key;
 
 public abstract class Utility {
     private String key;
@@ -9,7 +10,8 @@ public abstract class Utility {
 
     private boolean ready; // ready for the task to completed
 
-    public Utility(int quality) {
+    public Utility(int quality,String key) {
+        this.key = key;
         this.health = 100;
         this.quality = quality;
         this.ready = false;
@@ -39,11 +41,6 @@ public abstract class Utility {
     public int getQuality() {
         return quality;
     }
-/*
-    public boolean isBusy() {
-        return this.currentTask.isDone() || currentTask== null;
-    }
-*/
     public void setHealth(int health) {
         this.health = health;
     }

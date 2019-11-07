@@ -7,14 +7,14 @@ public abstract class Task {
     private int length;
     private LocalDateTime end;
     private String targetKey;
-    // private String UsingKey;
 
     public Task(int length, String targetKey) {
 
-        this.setLength(length);
+        this.length = 10;//length;
 
         // set time
-        this.end = LocalDateTime.now().plusSeconds(length);
+        this.end = LocalDateTime.now().plusSeconds(this.length);
+  
 
         this.setTargetKey(targetKey);
         // this.UsingKey = UsingKey;
@@ -46,6 +46,7 @@ public abstract class Task {
 
     }
 
+   
     public boolean isDone() {
         return getSecsRemaining() == 0;
     }

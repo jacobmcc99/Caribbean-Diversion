@@ -7,7 +7,7 @@ public class PlayerShip extends Ship {
 
     public PlayerShip(HashMap<String, Cannon> cannons, HashMap<String, Crew> crew) {
         super(cannons, crew);
-        // TODO Auto-generated constructor stub
+       
     }
 
     
