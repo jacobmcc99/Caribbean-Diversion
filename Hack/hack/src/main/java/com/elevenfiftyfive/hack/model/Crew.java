@@ -1,11 +1,6 @@
-package com.elevenfiftyfive.caribbeandiversion.model;
+package com.elevenfiftyfive.hack.model;
 
-import java.security.Key;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
-import java.util.Random;
 
 public class Crew extends Utility {
 
@@ -60,10 +55,11 @@ public class Crew extends Utility {
     }
 
     public Task getCurrent() {
-        if (setups.getCurrent() != null) {
+    
+        if (setups.getCurrent() != null && !setups.getCurrent().isDone()) {
             return setups.getCurrent();
         }
-        else if(repairs.getCurrent() != null)
+        else if(repairs.getCurrent() != null && !repairs.getCurrent().isDone())
         {
             return repairs.getCurrent();
         }

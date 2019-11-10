@@ -1,4 +1,4 @@
-package com.elevenfiftyfive.caribbeandiversion.model;
+package com.elevenfiftyfive.hack.model;
 
 import java.time.LocalDateTime;
 import java.time.Duration;
@@ -10,7 +10,7 @@ public abstract class Task {
 
     public Task(int length, String targetKey) {
 
-        this.length =length-17;
+        this.length =15;//length;
 
         // set time
         this.end = LocalDateTime.now().plusSeconds(this.length);

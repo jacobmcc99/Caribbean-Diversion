@@ -1,4 +1,4 @@
-package com.elevenfiftyfive.caribbeandiversion.model;
+package com.elevenfiftyfive.hack.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,8 +7,7 @@ import java.util.List;
 public class CarbGame
 {
     private List<Map> maps;
-    private PlayerShip player;
-
+    public Battle battle; 
     public CarbGame() {
 
         maps = new ArrayList<Map>();
@@ -16,10 +15,12 @@ public class CarbGame
         maps.add(new Map(2));
         maps.add(new Map(3));
 
-        
-        player = test();
+    
+        battle = new Battle(3, test());
 
     }
+
+
 
     public PlayerShip test()
     {
@@ -46,23 +47,13 @@ public class CarbGame
         // set tasks
 
         PlayerShip  ship = new PlayerShip(cannons, crew);
-
-        ship.setRepairTask(ship.getCannon("left"), ship.getCrew("firstmate"));
-        ship.setRepairTask(ship.getCannon("centerright"), ship.getCrew("sailingmaster"));
-   
+        
+      //  ship.setRepairTask(ship.getCannon("left"), ship.getCrew("firstmate"));
+        //ship.setRepairTask(ship.getCannon("centerright"), ship.getCrew("sailingmaster"));
+        
         return ship;
     }
-    public PlayerShip getPlayer(){
-        return player;
-    }
-    public String toString()
-    {
-        return player.toString();
-    }
-    public void update()
-    {
-        player.CompleteTasks();
-    }
+    
     
 
    
